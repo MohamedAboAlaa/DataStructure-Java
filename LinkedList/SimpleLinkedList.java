@@ -1,4 +1,4 @@
-public class LinkedList {
+public class SimpleLinkedList {
     private static class Node {
         int data;
         Node next;
@@ -11,7 +11,7 @@ public class LinkedList {
 
     private Node head;
 
-    public LinkedList() {
+    public SimpleLinkedList() {
         this.head = null;
     }
 
@@ -133,7 +133,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        SimpleLinkedList list = new SimpleLinkedList();
 
         list.insertFirst(10);
         list.insertFirst(20);
