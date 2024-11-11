@@ -10,6 +10,7 @@ public class SimpleLinkedList {
     }
 
     private Node head;
+    private int listLength = 0 ;
 
     public SimpleLinkedList() {
         this.head = null;
@@ -19,6 +20,7 @@ public class SimpleLinkedList {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
+        listLength += 1 ;
     }
 
     public void insertLast(int data) {
@@ -32,6 +34,7 @@ public class SimpleLinkedList {
             }
             current.next = newNode;
         }
+        listLength += 1 ;
     }
 
     public void insertPos(int data, int position) {
@@ -51,6 +54,7 @@ public class SimpleLinkedList {
         
         newNode.next = current.next;
         current.next = newNode;
+        listLength += 1 ;
     }
 
     public void deleteFirst() {
@@ -59,6 +63,7 @@ public class SimpleLinkedList {
             return;
         }
         head = head.next;
+        listLength -= 1 ;
     }
 
     public void deleteLast() {
@@ -76,6 +81,7 @@ public class SimpleLinkedList {
             current = current.next;
         }
         current.next = null;
+        listLength -= 1 ;
     }
 
     public void deletePos(int position) {
@@ -101,10 +107,12 @@ public class SimpleLinkedList {
         } else {
             throw new IndexOutOfBoundsException("Position out of bounds");
         }
+        listLength -= 1 ;
     }
 
     public void deleteList() {
         head = null;
+        listLength = 0 ;
     }
 
     public boolean searchItem(int data) {
@@ -132,6 +140,10 @@ public class SimpleLinkedList {
         System.out.println("null");
     }
 
+    public int getLength() {
+        return listLength ;
+    }
+
     public static void main(String[] args) {
         SimpleLinkedList list = new SimpleLinkedList();
 
@@ -149,5 +161,6 @@ public class SimpleLinkedList {
 
         list.deletePos(1);
         list.printList();  // 10 -> null
+        System.out.println(list.getLength());
     }
 }

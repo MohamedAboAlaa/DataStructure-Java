@@ -13,6 +13,7 @@ public class DoublyLinkedList {
 
     private Node head;
     private Node tail;
+    private int listLength = 0 ;
 
     public DoublyLinkedList() {
         this.head = null;
@@ -28,6 +29,7 @@ public class DoublyLinkedList {
             head.prev = newNode;
             head = newNode;
         }
+        listLength = listLength + 1 ;
     }
 
     public void insertLast(int data) {
@@ -39,6 +41,7 @@ public class DoublyLinkedList {
             newNode.prev = tail;
             tail = newNode;
         }
+        listLength = listLength + 1 ;
     }
 
     public void insertPos(int data, int position) {
@@ -66,6 +69,7 @@ public class DoublyLinkedList {
         if (newNode.next == null) {
             tail = newNode;
         }
+        listLength = listLength + 1 ;
     }
 
     public void deleteFirst() {
@@ -79,6 +83,7 @@ public class DoublyLinkedList {
             head = head.next;
             head.prev = null;
         }
+        listLength = listLength - 1 ;
     }
 
     public void deleteLast() {
@@ -92,6 +97,7 @@ public class DoublyLinkedList {
             tail = tail.prev;
             tail.next = null;
         }
+        listLength = listLength - 1 ;
     }
 
     public void deletePos(int position) {
@@ -125,11 +131,13 @@ public class DoublyLinkedList {
         if (current.prev != null) {
             current.prev.next = current.next;
         }
+        listLength = listLength - 1 ;
     }
 
     public void deleteList() {
         head = null;
         tail = null;
+        listLength = 0 ;
     }
 
     public boolean searchItem(int data) {
@@ -157,29 +165,20 @@ public class DoublyLinkedList {
         System.out.println("null");
     }
 
+    public int getLength() {
+        return listLength ;
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
 
-        list.insertFirst(10);
-        list.insertLast(20);
-        list.insertLast(30);
-        list.printList();  // 10 <-> 20 <-> 30 <-> null
-
-        list.insertPos(15, 1);
-        list.printList();  // 10 <-> 15 <-> 20 <-> 30 <-> null
-
-        System.out.println(list.searchItem(15));  // true
-        System.out.println(list.searchItem(100)); // false
-
-        list.deleteFirst();
-        list.printList();  // 15 <-> 20 <-> 30 <-> null
+        System.out.println(list.getLength());
+        list.insertPos(10, 0);
+        list.printList();
+        list.insertFirst(20);
+        list.printList();
         list.deleteLast();
-        list.printList();  // 15 <-> 20 <-> null
-
-        list.deletePos(1);
-        list.printList();  // 15 <-> null
-
-        list.deleteList();
-        list.printList();  // List is empty.
+        list.printList();
+        System.out.println(list.getLength());
     }
 }

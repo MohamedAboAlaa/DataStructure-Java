@@ -11,6 +11,7 @@ public class DoubleEndedLinkedList {
 
     private Node head;
     private Node tail;
+    private int listLength = 0 ;
 
     public DoubleEndedLinkedList() {
         this.head = null;
@@ -25,6 +26,7 @@ public class DoubleEndedLinkedList {
             newNode.next = head;
             head = newNode;
         }
+        listLength += 1 ;
     }
 
     public void insertLast(int data) {
@@ -35,6 +37,7 @@ public class DoubleEndedLinkedList {
             tail.next = newNode;
             tail = newNode;
         }
+        listLength += 1 ;
     }
 
     public void insertPos(int data, int position) {
@@ -58,6 +61,7 @@ public class DoubleEndedLinkedList {
         if (newNode.next == null) {
             tail = newNode;
         }
+        listLength += 1 ;
     }
 
     public void deleteFirst() {
@@ -69,6 +73,7 @@ public class DoubleEndedLinkedList {
         if (head == null) { 
             tail = null;
         }
+        listLength -= 1 ;
     }
 
     public void deleteLast() {
@@ -87,6 +92,7 @@ public class DoubleEndedLinkedList {
         }
         current.next = null;
         tail = current;
+        listLength -= 1 ;
     }
 
     public void deletePos(int position) {
@@ -116,11 +122,13 @@ public class DoubleEndedLinkedList {
         if (current.next == null) {
             tail = current;
         }
+        listLength -= 1 ;
     }
 
     public void deleteList() {
         head = null;
         tail = null;
+        listLength = 0 ;
     }
 
     public boolean searchItem(int data) {
@@ -148,6 +156,10 @@ public class DoubleEndedLinkedList {
         System.out.println("null");
     }
 
+    public int getLength() {
+        return listLength ;
+    }
+
     public static void main(String[] args) {
         DoubleEndedLinkedList list = new DoubleEndedLinkedList();
 
@@ -170,7 +182,9 @@ public class DoubleEndedLinkedList {
         list.deletePos(1);
         list.printList();  // 15 -> null
 
+        System.out.println(list.getLength());
         list.deleteList();
         list.printList();  // List is empty.
+        System.out.println(list.getLength());
     }
 }
