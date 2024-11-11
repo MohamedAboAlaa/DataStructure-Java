@@ -160,31 +160,25 @@ public class DoublyLinkedList {
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
 
-        // Insert elements at the beginning and end
         list.insertFirst(10);
         list.insertLast(20);
         list.insertLast(30);
         list.printList();  // 10 <-> 20 <-> 30 <-> null
 
-        // Insert element at position 1
         list.insertPos(15, 1);
         list.printList();  // 10 <-> 15 <-> 20 <-> 30 <-> null
 
-        // Search for an item
         System.out.println(list.searchItem(15));  // true
         System.out.println(list.searchItem(100)); // false
 
-        // Delete the first and last elements
         list.deleteFirst();
         list.printList();  // 15 <-> 20 <-> 30 <-> null
         list.deleteLast();
         list.printList();  // 15 <-> 20 <-> null
 
-        // Delete at a specific position
         list.deletePos(1);
         list.printList();  // 15 <-> null
 
-        // Delete the entire list
         list.deleteList();
         list.printList();  // List is empty.
     }
