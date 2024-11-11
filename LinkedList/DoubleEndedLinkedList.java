@@ -167,11 +167,9 @@ public class DoubleEndedLinkedList {
         list.deleteLast();
         list.printList();  // 15 -> 20 -> null
 
-        // Delete at a specific position
         list.deletePos(1);
         list.printList();  // 15 -> null
 
-        // Delete the entire list
         list.deleteList();
         list.printList();  // List is empty.
     }
