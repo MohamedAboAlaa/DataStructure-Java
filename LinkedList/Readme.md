@@ -6,6 +6,8 @@ A **Linked List** is a fundamental data structure used in computer science to or
 ## Types of Linked Lists
 
 ### 1. **Singly Linked List (SLL)**
+![SLL](https://github.com/user-attachments/assets/58c3b5de-41fb-41be-9c6f-7e86aacfb264)
+
 A singly linked list is a type of linked list in which each node contains two parts:
 - **Data**: Stores the value of the node.
 - **Next**: A pointer that refers to the next node in the list.
@@ -13,9 +15,13 @@ A singly linked list is a type of linked list in which each node contains two pa
 In a singly linked list, traversal is only possible in one direction, from the head (first node) to the tail (last node).
 
 ### 2. **Double-Ended Linked List**
+![imgg](https://github.com/user-attachments/assets/44cdedb6-16a3-4002-a03f-f70c6dc5264d)
+
 A double-ended linked list, also known as a deque (double-ended queue), allows for insertion and deletion of nodes at both the head and the tail of the list. It typically maintains two references: one to the head node and another to the tail node.
 
 ### 3. **Doubly Linked List (DLL)**
+![Doubly-Linked-List](https://github.com/user-attachments/assets/ea503f90-fd56-4f23-b7dd-8d2b35d80087)
+
 A doubly linked list is an extension of the singly linked list where each node has three components:
 - **Data**: The value of the node.
 - **Next**: A reference to the next node in the sequence.
@@ -134,8 +140,17 @@ list.printList();  // Output: 10 <-> 15 <-> 20 <-> null
 Linked lists are powerful data structures that provide efficient memory usage and allow for flexible insertion and deletion of elements. These structures are widely used in real-world applications and software systems for tasks like memory management, data traversal, and job scheduling. By understanding and implementing linked lists, you can improve the performance and flexibility of your programs.
 
 ---
-## Download Code
+## Clone the Repository and Access the LinkedList Directory
 
-You can download the code by clicking the button below:
+You can clone the entire repository and access the `LinkedList` directory by following these steps:
 
-[![Download Button](https://img.shields.io/badge/Download-Red?style=for-the-badge&logo=github&logoColor=white&color=red)](https://github.com/MohamedAboAlaa/DataStructure-Java/tree/main/LinkedList/archive/refs/heads/main.zip)
+1. **Clone the Repository**:
+   Open your terminal or command prompt and run the following command to clone the entire repository:
+
+   ```bash
+   git clone https://github.com/MohamedAboAlaa/DataStructure-Java.git
+   
+2. **Navigate to the LinkedList Directory**:
+   ```bash
+   cd DataStructure-Java/LinkedList
+
